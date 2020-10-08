@@ -1,0 +1,393 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Tester = Instance.new("ScreenGui")
+local UI = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local Noclip = Instance.new("ImageButton")
+local NoclipText = Instance.new("TextLabel")
+local Fling = Instance.new("ImageButton")
+local TextLabel_2 = Instance.new("TextLabel")
+
+--Properties:
+
+Tester.Name = "Tester"
+Tester.Parent = game.CoreGui
+
+UI.Name = "UI"
+UI.Parent = Tester
+UI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UI.BackgroundTransparency = 1.000
+UI.Position = UDim2.new(-0.200000003, 0, 0.0179999992, 0)
+UI.Size = UDim2.new(0, 229, 0, 512)
+UI.Image = "rbxassetid://3570695787"
+UI.ImageColor3 = Color3.fromRGB(34, 34, 34)
+UI.ScaleType = Enum.ScaleType.Slice
+UI.SliceCenter = Rect.new(100, 100, 100, 100)
+UI.SliceScale = 0.250
+
+TextLabel.Parent = UI
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.0611353703, 0, 0.01171875, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 36)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = "The Gray Jedi Order"
+TextLabel.TextColor3 = Color3.fromRGB(255, 157, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextStrokeColor3 = Color3.fromRGB(62, 62, 62)
+TextLabel.TextStrokeTransparency = 0.000
+TextLabel.TextWrapped = true
+
+Noclip.Name = "Noclip"
+Noclip.Parent = UI
+Noclip.Active = false
+Noclip.BackgroundColor3 = Color3.fromRGB(255, 174, 12)
+Noclip.BackgroundTransparency = 1.000
+Noclip.Position = UDim2.new(0.0611353703, 0, 0.09765625, 0)
+Noclip.Selectable = false
+Noclip.Size = UDim2.new(0, 200, 0, 27)
+Noclip.Image = "rbxassetid://3570695787"
+Noclip.ImageColor3 = Color3.fromRGB(255, 166, 12)
+Noclip.ScaleType = Enum.ScaleType.Slice
+Noclip.SliceCenter = Rect.new(100, 100, 100, 100)
+Noclip.SliceScale = 0.250
+
+NoclipText.Name = "NoclipText"
+NoclipText.Parent = Noclip
+NoclipText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NoclipText.BackgroundTransparency = 1.000
+NoclipText.Size = UDim2.new(0, 200, 0, 27)
+NoclipText.Font = Enum.Font.GothamBlack
+NoclipText.Text = "Noclip"
+NoclipText.TextColor3 = Color3.fromRGB(0, 0, 0)
+NoclipText.TextScaled = true
+NoclipText.TextSize = 14.000
+NoclipText.TextWrapped = true
+
+Fling.Name = "Fling"
+Fling.Parent = UI
+Fling.Active = false
+Fling.BackgroundColor3 = Color3.fromRGB(255, 174, 12)
+Fling.BackgroundTransparency = 1.000
+Fling.Position = UDim2.new(0.0611353703, 0, 0.1796875, 0)
+Fling.Selectable = false
+Fling.Size = UDim2.new(0, 200, 0, 27)
+Fling.Image = "rbxassetid://3570695787"
+Fling.ImageColor3 = Color3.fromRGB(255, 166, 12)
+Fling.ScaleType = Enum.ScaleType.Slice
+Fling.SliceCenter = Rect.new(100, 100, 100, 100)
+Fling.SliceScale = 0.250
+
+TextLabel_2.Parent = Fling
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Size = UDim2.new(0, 200, 0, 27)
+TextLabel_2.Font = Enum.Font.GothamBlack
+TextLabel_2.Text = "Invisible FLING"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+-- Scripts:
+local blur = Instance.new("BlurEffect")
+blur.Parent = game.Lighting
+blur.Size = 0
+
+
+local function HCYDDSD_fake_script() -- Noclip.Noclip 
+	local script = Instance.new('LocalScript', Noclip)
+
+	plr = game.Players.LocalPlayer
+	mouse = plr:GetMouse()
+	local nocliptext = script.Parent.NoclipText
+	
+	script.Parent.MouseButton1Down:Connect(function()
+		nocliptext.Text = "Executed"
+		wait(3)
+		nocliptext.Text = "Noclip"
+		noclip = false
+		game:GetService('RunService').Stepped:connect(function()
+			if noclip then
+				game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+			end
+		end)
+		mouse.KeyDown:connect(function(key)
+			if key == "f" then
+				noclip = not noclip
+				game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+			end
+		end)
+	end)
+end
+coroutine.wrap(HCYDDSD_fake_script)()
+local function ZUZF_fake_script() -- Fling.Noclip 
+	local script = Instance.new('LocalScript', Fling)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		
+		
+		
+		spawn(function()
+			local message = Instance.new("Message",workspace)
+			message.Text = "Loaded press z to execute inviseble , press x to respawn)"
+			wait(0.5)
+			message:Destroy()
+		end)
+		
+		
+		
+		
+		
+		
+		
+		
+		local mouse = game.Players.LocalPlayer:GetMouse()
+		
+		local groot = nil
+		
+		mouse.KeyDown:connect(function(k)
+			
+			if k == "z" then
+				
+				
+				
+				spawn(function()
+					local message = Instance.new("Message",workspace)
+					message.Text = "Fe Invisible Fling By Diemiers#4209 Loaded (wait 11 seconds to load)"
+					wait(11)
+					message:Destroy()
+				end)
+				
+				
+				local ch = game.Players.LocalPlayer.Character
+				local prt=Instance.new("Model", workspace)
+				local z1 =  Instance.new("Part", prt)
+				z1.Name="Torso"
+				z1.CanCollide = false
+				z1.Anchored = true
+				local z2  =Instance.new("Part", prt)
+				z2.Name="Head"
+				z2.Anchored = true
+				z2.CanCollide = false
+				local z3 =Instance.new("Humanoid", prt)
+				z3.Name="Humanoid"
+				z1.Position = Vector3.new(0,9999,0)
+				z2.Position = Vector3.new(0,9991,0)
+				game.Players.LocalPlayer.Character=prt
+				wait(5)
+				game.Players.LocalPlayer.Character=ch
+				wait(6)
+				
+				
+				local plr = game.Players.LocalPlayer
+				mouse = plr:GetMouse()
+				
+				local Hum = Instance.new("Humanoid")
+				Hum.Parent = game.Players.LocalPlayer.Character
+				
+				
+				local root =  game.Players.LocalPlayer.Character.HumanoidRootPart
+				
+				
+				for i,v in pairs(plr.Character:GetChildren()) do
+					
+					if v ~= root and  v.Name ~= "Humanoid" then
+						
+						v:Destroy()
+						
+					end
+					
+					
+				end
+				
+				workspace.CurrentCamera.CameraSubject = root
+				
+				local se = Instance.new("SelectionBox",root)
+				se.Adornee = root
+				
+				
+				game:GetService('RunService').Stepped:connect(function()
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+				end)
+				game:GetService('RunService').RenderStepped:connect(function()
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+				end)
+				
+				
+				power = 999999 -- change this to make it more or less powerful
+				
+				power = power*10
+				
+				---
+				wait(.1)
+				local bambam = Instance.new("BodyThrust")
+				bambam.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+				bambam.Force = Vector3.new(power,0,power)
+				bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position 
+				
+				
+				
+				
+				
+				local plr = game.Players.LocalPlayer
+				local torso = root
+				local flying = true
+				local deb = true
+				local ctrl = {f = 0, b = 0, l = 0, r = 0}
+				local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+				local maxspeed = 120
+				local speed = 15
+				
+				
+				---local bambam = Instance.new("BodyThrust")
+				---bambam.Parent = torso
+				--bambam.Force = Vector3.new(9999999,0,9999999)
+				--bambam.Location = torso.Position
+				
+				
+				---
+				groot = root
+				
+				function Fly()
+					local bg = Instance.new("BodyGyro", torso)
+					bg.P = 9e4
+					bg.maxTorque = Vector3.new(0, 0, 0)
+					bg.cframe = torso.CFrame
+					local bv = Instance.new("BodyVelocity", torso)
+					bv.velocity = Vector3.new(0,0,0)
+					bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+					repeat wait()
+						
+						if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+							speed = speed+.2
+							if speed > maxspeed then
+								speed = maxspeed
+							end
+						elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+							speed = speed-1
+							if speed < 0 then
+								speed = 0
+							end
+						end
+						if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+							bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+							lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+						elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+							bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+						else
+							bv.velocity = Vector3.new(0,0.1,0)
+						end
+						
+					until not flying
+					ctrl = {f = 0, b = 0, l = 0, r = 0}
+					lastctrl = {f = 0, b = 0, l = 0, r = 0}
+					speed = 0
+					bg:Destroy()
+					bv:Destroy()
+					
+				end
+				mouse.KeyDown:connect(function(key)
+					if key:lower() == "e" then
+						if flying then flying = false
+						else
+							flying = true
+							Fly()
+						end
+					elseif key:lower() == "w" then
+						ctrl.f = 1
+					elseif key:lower() == "s" then
+						ctrl.b = -1
+					elseif key:lower() == "a" then
+						ctrl.l = -1
+					elseif key:lower() == "d" then
+						ctrl.r = 1
+					end
+				end)
+				mouse.KeyUp:connect(function(key)
+					if key:lower() == "w" then
+						ctrl.f = 0
+					elseif key:lower() == "s" then
+						ctrl.b = 0
+					elseif key:lower() == "a" then
+						ctrl.l = 0
+					elseif key:lower() == "d" then
+						ctrl.r = 0
+					elseif key:lower() == "r" then
+						
+					end
+				end)
+				Fly()
+				
+				
+				
+			elseif k == "x" then
+				
+				
+				spawn(function()
+					local message = Instance.new("Message",workspace)
+					message.Text = "Respawning dont spam"
+					wait(1)
+					message:Destroy()
+				end)
+				
+				local saved = groot.Position
+				
+				local ch = game.Players.LocalPlayer.Character
+				local prt=Instance.new("Model", workspace)
+				local z1 =  Instance.new("Part", prt)
+				z1.Name="Torso"
+				z1.CanCollide = false
+				z1.Anchored = true
+				local z2  =Instance.new("Part", prt)
+				z2.Name="Head"
+				z2.Anchored = true
+				z2.CanCollide = false
+				local z3 =Instance.new("Humanoid", prt)
+				z3.Name="Humanoid"
+				z1.Position = Vector3.new(0,9999,0)
+				z2.Position = Vector3.new(0,9991,0)
+				game.Players.LocalPlayer.Character=prt
+				wait(5)
+				game.Players.LocalPlayer.Character=ch
+				local poop = nil
+				repeat wait() poop = game.Players.LocalPlayer.Character:FindFirstChild("Head") until poop ~= nil
+				wait(1)
+				game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(saved)
+				
+			end
+			
+			
+		end)
+	end)
+end
+coroutine.wrap(ZUZF_fake_script)()
+local function MUZGH_fake_script() -- Tester.LocalScript 
+	local script = Instance.new('LocalScript', Tester)
+
+	local toggle = false 
+	local gui = script.Parent.UI
+	
+	
+	function onKeyPress(actionName, userInputState, inputObject)
+		if userInputState == Enum.UserInputState.Begin then
+			print("Insert was pressed")
+			if toggle == false then
+				toggle = true
+				blur.Size = 24
+				gui:TweenPosition(UDim2.new(0, 12, 0.018, 0), 'InOut', 'Quint', .3, true)
+			else
+				toggle = false
+				blur.Size = 0
+				gui:TweenPosition(UDim2.new(-0.2, 0, 0.018, 0), 'InOut', 'Quint', .3, true)
+			end
+		end
+	end
+	
+	game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode.Insert)
+end
+coroutine.wrap(MUZGH_fake_script)()
