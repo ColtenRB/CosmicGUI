@@ -7,6 +7,7 @@ local Intro = Instance.new("ScreenGui")
 local Intro_2 = Instance.new("ImageLabel")
 local Title = Instance.new("TextLabel")
 local GameTitle = Instance.new("TextLabel")
+Intro.ResetOnSpawn = false
 local Place = game.PlaceId
 
 --Properties:
@@ -54,7 +55,7 @@ GameTitle.TextWrapped = true
 
 -- Scripts:
 
-if Place == 5568163991 then
+if Place == 4114605482 then
 	GameTitle.Text = "The Gray Jedi Order"
 	wait(20)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/ColtenRB/CosmicGUI/main/TestingREP.txt", true))()
