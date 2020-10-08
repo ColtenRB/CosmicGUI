@@ -56,6 +56,8 @@ GameTitle.TextWrapped = true
 
 if Place == 4114605482 then
 	GameTitle.Text = "The Gray Jedi Order"
+	wait(20)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ColtenRB/CosmicGUI/main/TestingREP.txt", true))()
 end
 
 local function EWVECP_fake_script() -- Intro_2.Intro1 
@@ -207,7 +209,7 @@ local function QFWJIX_fake_script() -- Intro_2.Intro1
 	
 	local tween = tweenService:Create(gui,tweeningInformation,textProperties)
 	wait(17)
-	tween:Play()
+	tween:Play()	
 	
 	
 end
