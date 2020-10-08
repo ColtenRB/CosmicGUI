@@ -54,7 +54,7 @@ GameTitle.TextWrapped = true
 
 -- Scripts:
 
-if Place == 4114605482 then
+if Place == 5568163991 then
 	GameTitle.Text = "The Gray Jedi Order"
 	wait(20)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/ColtenRB/CosmicGUI/main/TestingREP.txt", true))()
