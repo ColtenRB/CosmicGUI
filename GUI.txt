@@ -1,1 +1,214 @@
-print("HI")
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Intro = Instance.new("ScreenGui")
+local Intro_2 = Instance.new("ImageLabel")
+local Title = Instance.new("TextLabel")
+local GameTitle = Instance.new("TextLabel")
+local Place = game.PlaceId
+
+--Properties:
+
+Intro.Name = "Intro"
+Intro.Parent = game.CoreGui
+Intro.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Intro_2.Name = "Intro"
+Intro_2.Parent = Intro
+Intro_2.AnchorPoint = Vector2.new(0.5, 0.5)
+Intro_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Intro_2.BackgroundTransparency = 1.000
+Intro_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+Intro_2.Image = "rbxassetid://5459783069"
+
+Title.Name = "Title"
+Title.Parent = Intro_2
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.112820514, 0, 0.189743593, 0)
+Title.Size = UDim2.new(0, 150, 0, 37)
+Title.Font = Enum.Font.GothamBold
+Title.Text = "Cosmic Hub"
+Title.TextColor3 = Color3.fromRGB(255, 130, 21)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextStrokeTransparency = 0.000
+Title.TextTransparency = 1.000
+Title.TextWrapped = true
+
+GameTitle.Name = "GameTitle"
+GameTitle.Parent = Intro_2
+GameTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GameTitle.BackgroundTransparency = 1.000
+GameTitle.Position = UDim2.new(0.112820514, 0, 0.379487187, 0)
+GameTitle.Size = UDim2.new(0, 150, 0, 37)
+GameTitle.Font = Enum.Font.GothamBold
+GameTitle.Text = "Title"
+GameTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+GameTitle.TextScaled = true
+GameTitle.TextSize = 14.000
+GameTitle.TextTransparency = 1.000
+GameTitle.TextWrapped = true
+
+-- Scripts:
+
+if Place == 4114605482 then
+	GameTitle.Text = "The Gray Jedi Order"
+end
+
+local function EWVECP_fake_script() -- Intro_2.Intro1 
+	local script = Instance.new('LocalScript', Intro_2)
+
+	local gui = script.Parent
+	
+	local tweenService = game:GetService("TweenService")
+	
+	local tweeningInformation = TweenInfo.new(
+		1, --How long it should be in seconds
+		Enum.EasingStyle.Quad, --Easing Style
+		Enum.EasingDirection.InOut, -- Easing Direction
+		0, --Repeats (o to disable)
+		false, --Should it reverse back?
+		0 --Delay between repeats
+	)
+	
+	local textProperties = {
+		Size = UDim2.new(0, 195, 0, 195)
+	}
+	
+	local tween = tweenService:Create(gui,tweeningInformation,textProperties)
+	wait(5)
+	tween:Play()
+	
+	
+end
+coroutine.wrap(EWVECP_fake_script)()
+local function XRQPT_fake_script() -- Title.CosmicHubLogo 
+	local script = Instance.new('LocalScript', Title)
+
+	local gui = script.Parent
+	
+	local tweenService = game:GetService("TweenService")
+	
+	local tweeningInformation = TweenInfo.new(
+		1, --How long it should be in seconds
+		Enum.EasingStyle.Quad, --Easing Style
+		Enum.EasingDirection.InOut, -- Easing Direction
+		0, --Repeats (o to disable)
+		false, --Should it reverse back?
+		0 --Delay between repeats
+	)
+	
+	local textProperties = {
+		TextTransparency = 0
+	}
+	
+	local tween = tweenService:Create(gui,tweeningInformation,textProperties)
+	wait(7)
+	tween:Play()
+end
+coroutine.wrap(XRQPT_fake_script)()
+local function CMXP_fake_script() -- Title.CosmicHubLogo 
+	local script = Instance.new('LocalScript', Title)
+
+	local gui = script.Parent
+	
+	local tweenService = game:GetService("TweenService")
+	
+	local tweeningInformation = TweenInfo.new(
+		1, --How long it should be in seconds
+		Enum.EasingStyle.Quad, --Easing Style
+		Enum.EasingDirection.InOut, -- Easing Direction
+		0, --Repeats (o to disable)
+		false, --Should it reverse back?
+		0 --Delay between repeats
+	)
+	
+	local textProperties = {
+		TextTransparency = 1
+	}
+	
+	local tween = tweenService:Create(gui,tweeningInformation,textProperties)
+	wait(12)
+	tween:Play()
+end
+coroutine.wrap(CMXP_fake_script)()
+local function CANCQY_fake_script() -- GameTitle.CosmicHubLogo 
+	local script = Instance.new('LocalScript', GameTitle)
+
+	local gui = script.Parent
+	
+	local tweenService = game:GetService("TweenService")
+	
+	local tweeningInformation = TweenInfo.new(
+		1, --How long it should be in seconds
+		Enum.EasingStyle.Quad, --Easing Style
+		Enum.EasingDirection.InOut, -- Easing Direction
+		0, --Repeats (o to disable)
+		false, --Should it reverse back?
+		0 --Delay between repeats
+	)
+	
+	local textProperties = {
+		TextTransparency = 0
+	}
+	
+	local tween = tweenService:Create(gui,tweeningInformation,textProperties)
+	wait(13)
+	tween:Play()
+end
+coroutine.wrap(CANCQY_fake_script)()
+local function HCNGI_fake_script() -- GameTitle.CosmicHubLogo 
+	local script = Instance.new('LocalScript', GameTitle)
+
+	local gui = script.Parent
+	
+	local tweenService = game:GetService("TweenService")
+	
+	local tweeningInformation = TweenInfo.new(
+		1, --How long it should be in seconds
+		Enum.EasingStyle.Quad, --Easing Style
+		Enum.EasingDirection.InOut, -- Easing Direction
+		0, --Repeats (o to disable)
+		false, --Should it reverse back?
+		0 --Delay between repeats
+	)
+	
+	local textProperties = {
+		TextTransparency = 1
+	}
+	
+	local tween = tweenService:Create(gui,tweeningInformation,textProperties)
+	wait(16)
+	tween:Play()
+end
+coroutine.wrap(HCNGI_fake_script)()
+local function QFWJIX_fake_script() -- Intro_2.Intro1 
+	local script = Instance.new('LocalScript', Intro_2)
+
+	local gui = script.Parent
+	
+	local tweenService = game:GetService("TweenService")
+	
+	local tweeningInformation = TweenInfo.new(
+		1, --How long it should be in seconds
+		Enum.EasingStyle.Quad, --Easing Style
+		Enum.EasingDirection.InOut, -- Easing Direction
+		0, --Repeats (o to disable)
+		false, --Should it reverse back?
+		0 --Delay between repeats
+	)
+	
+	local textProperties = {
+		Size = UDim2.new(0, 0, 0, 0)
+	}
+	
+	local tween = tweenService:Create(gui,tweeningInformation,textProperties)
+	wait(17)
+	tween:Play()
+	
+	
+end
+coroutine.wrap(QFWJIX_fake_script)()
