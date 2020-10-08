@@ -212,3 +212,5 @@ local function QFWJIX_fake_script() -- Intro_2.Intro1
 	
 end
 coroutine.wrap(QFWJIX_fake_script)()
+
+print("Sent exploit")
